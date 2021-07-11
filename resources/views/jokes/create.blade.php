@@ -14,13 +14,13 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="name">Nome:</label>
-                                    <input type="text" class="form-control" id="name" name="name">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{$user->name ?? '' }}">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{$user->email ?? '' }}">
                                 </div>
                             </div>
                         </div>

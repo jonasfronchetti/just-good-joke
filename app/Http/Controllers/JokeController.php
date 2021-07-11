@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Joke;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JokeController extends Controller
 {
@@ -34,7 +37,8 @@ class JokeController extends Controller
      */
     public function create()
     {
-        return view('jokes.create');
+        $user = Auth::user();
+        return view('jokes.create', compact('user'));
 
     }
 
@@ -50,8 +54,7 @@ class JokeController extends Controller
 
         $joke = $this->jokes->create($data);
 
-        return redirect()->route('jokes', $joke->id)
-            ->with('message', 'Piada criada com sucesso');
+        return redirect()->route('jokes');
     }
 
     /**
@@ -62,40 +65,34 @@ class JokeController extends Controller
      */
     public function show(Joke $joke)
     {
-        //
+        $joke->created = Carbon::parse($joke->created_at)->format('d/m/Y');
+        return response()->json($joke);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Joke  $joke
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Joke $joke)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * like the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Joke  $joke
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Joke $joke)
+    public function like(Request $request, Joke $joke)
     {
-        //
+        $joke->update(['like' => $joke->like + 1]);
+        return $joke->like;
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Deslike the specified resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Joke  $joke
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Joke $joke)
+    public function deslike(Request $request, Joke $joke)
     {
-        //
+        $joke->update(['deslike' => $joke->deslike + 1]);
+        return $joke->deslike;
     }
+
 }

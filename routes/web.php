@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/jokes', [App\Http\Controllers\JokeController::class, 'index'])->name('jokes');
 Route::get('/jokes/create', [App\Http\Controllers\JokeController::class, 'create'])->name('jokes.create');
 Route::post('/jokes/store', [App\Http\Controllers\JokeController::class, 'store'])->name('jokes.store');
+Route::get('/jokes/show/{joke}', [App\Http\Controllers\JokeController::class, 'show'])->name('jokes.show');
+Route::post('/jokes/like/{joke}', [App\Http\Controllers\JokeController::class, 'like'])->name('jokes.like');
+Route::post('/jokes/deslike/{joke}', [App\Http\Controllers\JokeController::class, 'deslike'])->name('jokes.deslike');
