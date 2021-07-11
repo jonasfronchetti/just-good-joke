@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  just_good_joke_app:
+    build: docker
+    container_name: just_good_joke
+    volumes:
+      - ./:/usr/share/nginx
+    ports:
+      - ${DOCKER_HTTP_PORT}:80
+    depends_on:
+      - just_good_joke_db
+    networks:
+      - backend
+  just_good_joke_db:
+    container_name: just_good_joke_db
+    image: mysql:5.7.34
+    command: --sql_mode="" --character-set-server="utf8mb4" --collation-server="utf8mb4_unicode_ci"
+    volumes:
+     - just-good-joke-mysql-data:/var/lib/mysql
+    ports:
+      - ${DOCKER_DB_PORT}:3306
+    networks:
+        - backend
+    environment:
+     - DB_HOST=just_good_joke_db
+     - MYSQL_ROOT_PASSWORD=pass
+     - MYSQL_DATABASE=just-good-joke
+     - MYSQL_USER=developers
+     - MYSQL_PASSWORD=pass
+volumes:
+  just-good-joke-mysql-data:
+networks:
+  backend:
+    name: just_good_joke_network
