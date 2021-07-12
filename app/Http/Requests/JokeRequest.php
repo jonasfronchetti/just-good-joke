@@ -13,7 +13,7 @@ class JokeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class JokeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'email' => 'required',
+            'joke' => 'required',
+        ];
+    }
+
+    /**
+     * Get the validation messages that apply to the request.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo CFOP é de preenchimento obrigatório',
+            'email.required' => 'O campo Nome é de preenchimento obrigatório',
+            'joke.required' => 'O campo Nome é de preenchimento obrigatório',
         ];
     }
 }

@@ -14,19 +14,19 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="name">Nome:</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{$user->name ?? '' }}">
+                                    <input type="text" class="form-control" required="required" id="name" name="name" value="{{$user->name ?? '' }} ">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{$user->email ?? '' }}">
+                                    <input type="email" class="form-control" id="email" name="email" required="required" aria-describedby="emailHelp" value="{{$user->email ?? '' }}">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="joke">Piada</label>
-                            <textarea type="text" class="form-control " id="joke" name="joke"></textarea>
+                            <textarea type="text" class="form-control " id="joke" name="joke" required="required"></textarea>
                         </div>
                         <button type="submit" class="btn btn-danger float-right">Enviar piada</button>
                         <a href="{{ route('jokes') }}" type="submit" class="btn btn-light float-right">Cancelar</a>
