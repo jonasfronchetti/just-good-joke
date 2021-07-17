@@ -53,7 +53,9 @@ class JokeController extends Controller
         $data = $request->all();
 
         $joke = $this->jokes->create($data);
-
+        if ($request->ajax()) {
+            return $joke->toJson();
+        }
         return redirect()->route('jokes');
     }
 

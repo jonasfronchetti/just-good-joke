@@ -1,0 +1,552 @@
+openapi: 3.0.3
+info:
+    title: null
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost'
+paths:
+    /api/user:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /login:
+        get:
+            summary: 'Show the application''s login form.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n    </head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Login</div>\n\n                <div class=\"card-body\">\n                    <form method=\"POST\" action=\"http://localhost/login\">\n                        <input type=\"hidden\" name=\"_token\" value=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password\" class=\"col-md-4 col-form-label text-md-right\">Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password\" type=\"password\" class=\"form-control \" name=\"password\" required autocomplete=\"current-password\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <div class=\"form-check\">\n                                    <input class=\"form-check-input\" type=\"checkbox\" name=\"remember\" id=\"remember\" >\n\n                                    <label class=\"form-check-label\" for=\"remember\">\n                                        Remember Me\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-8 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Login\n                                </button>\n\n                                                                    <a class=\"btn btn-link\" href=\"http://localhost/password/reset\">\n                                        Forgot Your Password?\n                                    </a>\n                                                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Handle a login request to the application.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /logout:
+        post:
+            summary: 'Log the user out of the application.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /register:
+        get:
+            summary: 'Show the application registration form.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n    </head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Register</div>\n\n                <div class=\"card-body\">\n                    <form method=\"POST\" action=\"http://localhost/register\">\n                        <input type=\"hidden\" name=\"_token\" value=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n                        <div class=\"form-group row\">\n                            <label for=\"name\" class=\"col-md-4 col-form-label text-md-right\">Name</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"name\" type=\"text\" class=\"form-control \" name=\"name\" value=\"\" required autocomplete=\"name\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password\" class=\"col-md-4 col-form-label text-md-right\">Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password\" type=\"password\" class=\"form-control \" name=\"password\" required autocomplete=\"new-password\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password-confirm\" class=\"col-md-4 col-form-label text-md-right\">Confirm Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password-confirm\" type=\"password\" class=\"form-control\" name=\"password_confirmation\" required autocomplete=\"new-password\">\n                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Register\n                                </button>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Handle a registration request for the application.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /password/reset:
+        get:
+            summary: 'Display the form to request a password reset link.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n    </head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Reset Password</div>\n\n                <div class=\"card-body\">\n                    \n                    <form method=\"POST\" action=\"http://localhost/password/email\">\n                        <input type=\"hidden\" name=\"_token\" value=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Send Password Reset Link\n                                </button>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Reset the given user''s password.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /password/email:
+        post:
+            summary: 'Send a reset link to the given user.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/password/reset/{token}':
+        get:
+            summary: 'Display the password reset view for the given token.'
+            description: 'If no token is present, display the link request form.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n    </head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-8\">\n            <div class=\"card\">\n                <div class=\"card-header\">Reset Password</div>\n\n                <div class=\"card-body\">\n                    <form method=\"POST\" action=\"http://localhost/password/reset\">\n                        <input type=\"hidden\" name=\"_token\" value=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n                        <input type=\"hidden\" name=\"token\" value=\"{token}\">\n\n                        <div class=\"form-group row\">\n                            <label for=\"email\" class=\"col-md-4 col-form-label text-md-right\">E-Mail Address</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"email\" type=\"email\" class=\"form-control \" name=\"email\" value=\"\" required autocomplete=\"email\" autofocus>\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password\" class=\"col-md-4 col-form-label text-md-right\">Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password\" type=\"password\" class=\"form-control \" name=\"password\" required autocomplete=\"new-password\">\n\n                                                            </div>\n                        </div>\n\n                        <div class=\"form-group row\">\n                            <label for=\"password-confirm\" class=\"col-md-4 col-form-label text-md-right\">Confirm Password</label>\n\n                            <div class=\"col-md-6\">\n                                <input id=\"password-confirm\" type=\"password\" class=\"form-control\" name=\"password_confirmation\" required autocomplete=\"new-password\">\n                            </div>\n                        </div>\n\n                        <div class=\"form-group row mb-0\">\n                            <div class=\"col-md-6 offset-md-4\">\n                                <button type=\"submit\" class=\"btn btn-primary\">\n                                    Reset Password\n                                </button>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+    /password/confirm:
+        get:
+            summary: 'Display the password confirmation view.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+        post:
+            summary: 'Confirm the given user''s password.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /:
+        get:
+            summary: 'Show the application dashboard.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n    </head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n                <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-md-6\">\n                <div class=\"card text-center\">\n                    <div class=\"card-body\">\n                        <div class=\"textJoke\">\n                            SÓ PIADA BOA\n                        </div>\n\n                        <div class=\"textJokeBase\">\n                            Participe da maior comunidade de piadistas do <b>Brasil</b>. Vote nas piadas de outros usuários e cadastre suas as suas próprias.\n                            <br>\n                            <br>\n                            <b>Só não vá morrer de rir! kkk</b>\n                        </div>\n\n                        <a href=\"http://localhost/jokes\" type=\"button\" class=\"btn btn-danger\">Começar</a>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+    /jokes:
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n        <link href=\"http://localhost/assets/datatables/dataTables.bootstrap4.min.css\" rel=\"stylesheet\" type=\"text/css\" />\n</head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-10\">\n            <div class=\"card\">\n                <a href=\"http://localhost/jokes/create\" class=\"btn btn-danger float-right\">Criar piada</a>\n                <div class=\"card-header\">\n\n                    <div class=\"table-responsive\">\n                        <table id=\"default-datatable\" class=\"display table table-striped table-bordered\">\n                            <thead>\n                            <tr>\n                                <th scope=\"col\">Piada</th>\n                                <th scope=\"col\">Texto</th>\n                                <th scope=\"col\">Nome</th>\n                                <th scope=\"col\">Like</th>\n                                <th scope=\"col\">Deslike</th>\n                                <th scope=\"col\">Publicado</th>\n                            </tr>\n                            </thead>\n                            <tbody>\n                                                            <tr onclick=\"showModal(1)\">\n                                    <td  scope=\"row\">1</td>\n                                    <td>Dou aula de química e física, duas disciplinas pelas quais a maioria dos alunos tem aversão.\n\nUm dia comentei, depois de uma das muitas badernas em classe:\n\n– Eu ganho pouco, mas me divirto com vocês.\n\nE um deles, para não perder a oportunidade, respondeu:\n\n– Nós também, não aprendemos nada, mas nos divertimos muito.</td>\n                                    <td>Jonas Fronchetti</td>\n                                    <td id=\"like1\">0</td>\n                                    <td id=\"deslike1\">0</td>\n                                    <td>17/07/2021</td>\n\n                                </tr>\n                                                            <tr onclick=\"showModal(2)\">\n                                    <td  scope=\"row\">2</td>\n                                    <td>Fuga voluptatem officiis totam maxime est omnis autem. Veniam repellat dolores et corrupti fugit. Et voluptas est sed sed commodi magni quidem.</td>\n                                    <td>Daren Emmerich</td>\n                                    <td id=\"like2\">0</td>\n                                    <td id=\"deslike2\">0</td>\n                                    <td>17/07/2021</td>\n\n                                </tr>\n                                                            <tr onclick=\"showModal(3)\">\n                                    <td  scope=\"row\">3</td>\n                                    <td>Vero accusantium qui culpa earum neque. Vel explicabo quasi voluptatem praesentium. Laboriosam nesciunt sunt excepturi quos.</td>\n                                    <td>Kallie Dicki</td>\n                                    <td id=\"like3\">0</td>\n                                    <td id=\"deslike3\">0</td>\n                                    <td>17/07/2021</td>\n\n                                </tr>\n                                                            <tr onclick=\"showModal(4)\">\n                                    <td  scope=\"row\">4</td>\n                                    <td>Quia nostrum dolores vel asperiores ut. Deserunt temporibus a et. Totam quia molestias a nemo soluta exercitationem modi.</td>\n                                    <td>Evie Yost DDS</td>\n                                    <td id=\"like4\">0</td>\n                                    <td id=\"deslike4\">0</td>\n                                    <td>17/07/2021</td>\n\n                                </tr>\n                                                            <tr onclick=\"showModal(5)\">\n                                    <td  scope=\"row\">5</td>\n                                    <td>Soluta necessitatibus qui sint aut soluta dolorum itaque. Dolores facilis ex necessitatibus et est esse voluptatem. Non voluptatem provident quibusdam accusantium numquam. Iste voluptas ea consectetur iste quos eaque. Consequuntur eius natus tempora maiores qui consequatur.</td>\n                                    <td>Kathryn Langosh</td>\n                                    <td id=\"like5\">0</td>\n                                    <td id=\"deslike5\">0</td>\n                                    <td>17/07/2021</td>\n\n                                </tr>\n                                                            <tr onclick=\"showModal(6)\">\n                                    <td  scope=\"row\">6</td>\n                                    <td>Excepturi consequuntur optio labore consequuntur. Eum quia velit alias. Corrupti iure repudiandae et voluptate.</td>\n                                    <td>Cordell D&#039;Amore</td>\n                                    <td id=\"like6\">0</td>\n                                    <td id=\"deslike6\">0</td>\n                                    <td>17/07/2021</td>\n\n                                </tr>\n                                                        </tbody>\n                        </table>\n                    </div>\n\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"modal fade bd-example-modal-lg\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n    <div class=\"modal-dialog modal-lg\" role=\"document\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h5 class=\"modal-title\">Piada <span id=\"joke\">0</span></h5>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                    <div class=\"p-2\">\n                        <input type=\"hidden\" value=\"\" id=\"joke_id\">\n                        <p class=\"card-text\" id=\"joke_text\">Piada</p>\n                        <h4>\n                            <span id=\"joke_name\">Nome</span>\n                            <span class=\"img-thumbnail\" id=\"joke_like\">^ 123</span>\n                            <span class=\"img-thumbnail\" id=\"joke_deslike\">v 456</span>\n                            Publicada em <span  id=\"joke_created_at\">17/07/2021</span>\n                        </h4>\n\n                    </div>\n            </div>\n            <div class=\"modal-footer\">\n                <a onclick=\"like()\" type=\"button\" class=\"btn btn-secondary\">Chorei</a>\n                <button onclick=\"deslike()\" type=\"button\" class=\"btn btn-primary\">Nem ri</button>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n        \n    <script src=\"http://localhost/assets/datatables/jquery.dataTables.min.js\"></script>\n    <script src=\"http://localhost/assets/datatables/dataTables.bootstrap4.min.js\"></script>\n    <script src=\"http://localhost/assets/datatables/dataTables.buttons.min.js\"></script>\n    <script src=\"http://localhost/assets/datatables/dataTables.responsive.min.js\"></script>\n    <script src=\"http://localhost/assets/datatables/responsive.bootstrap4.min.js\"></script>\n    <script src=\"http://localhost/js/custom-table-datatable.js\"></script>\n    <script>\n        function showModal(id) {\n            fetch('/jokes/show/'+id, {\n                headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': \"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\" },\n                method: 'GET',\n                credentials: 'same-origin'\n            }).then(response => {\n                return response.json();\n            }).then(data => {\n                console.log(data);\n                $('#exampleModal').modal('toggle');\n                $('#joke_id').val(data.id);\n                $('#joke').html(data.id);\n                $('#joke_text').html(data.joke);\n                $('#joke_name').html(data.name);\n                $('#joke_like').html(data.like);\n                $('#joke_deslike').html(data.deslike);\n                $('#joke_created_at').html(data.created);\n\n            });\n\n        }\n\n        function like() {\n            let id = $('#joke_id').val();\n            fetch('/jokes/like/' + id, {\n                headers: {'Content-Type': 'application/json', 'X-CSRF-TOKEN': \"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\"},\n                method: 'POST',\n                credentials: 'same-origin'\n            }).then(response => {\n                return response.json();\n            }).then(data => {\n                $('#like'+id).html(data);\n                $('#exampleModal').modal('toggle');\n\n            });\n        }\n        function deslike() {\n            let id = $('#joke_id').val();\n            fetch('/jokes/deslike/'+id, {\n                headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': \"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\" },\n                method: 'POST',\n                credentials: 'same-origin'\n            }).then(response => {\n                return response.json();\n            }).then(data => {\n                $('#deslike'+id).html(data);\n                $('#exampleModal').modal('toggle');\n\n            });\n        }\n\n    </script>\n</body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+    /jokes/create:
+        get:
+            summary: 'Show the form for creating a new resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- CSRF Token -->\n    <meta name=\"csrf-token\" content=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">\n\n    <title>Laravel</title>\n\n    <!-- Scripts -->\n    <script src=\"http://localhost/js/app.js\" defer></script>\n\n    <!-- Fonts -->\n    <link rel=\"dns-prefetch\" href=\"//fonts.gstatic.com\">\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito\" rel=\"stylesheet\">\n    <!-- Styles -->\n    <link href=\"http://localhost/css/app.css\" rel=\"stylesheet\">\n    <link href=\"http://localhost/css/style.css\" rel=\"stylesheet\">\n    </head>\n<body>\n    <div id=\"app\">\n        <nav class=\"navbar navbar-expand-md navbar-light bg-white shadow-sm\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"http://localhost\">\n                    Laravel\n                </a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <!-- Left Side Of Navbar -->\n                    <ul class=\"navbar-nav mr-auto\">\n\n                    </ul>\n\n                    <!-- Right Side Of Navbar -->\n                    <ul class=\"navbar-nav ml-auto\">\n                        <!-- Authentication Links -->\n                                                                                    <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/login\">Login</a>\n                                </li>\n                            \n                                                            <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"http://localhost/register\">Register</a>\n                                </li>\n                                                                        </ul>\n                </div>\n            </div>\n        </nav>\n\n        <main class=\"py-4\">\n            <div class=\"container\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-md-10\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <h2>Nova Piada</h2>\n                    <form action=\"http://localhost/jokes/store\" class=\"form\" method=\"POST\" enctype=\"multipart/form-data\">\n                        <input type=\"hidden\" name=\"_token\" value=\"coYtJEU3JrO1ubyZMxZOl3Xabt1DVmfv8pvvaQYK\">                        <input type=\"hidden\" name=\"_method\" value=\"POST\">                        <div class=\"row\">\n                            <div class=\"col\">\n                                <div class=\"form-group\">\n                                    <label for=\"name\">Nome:</label>\n                                    <input type=\"text\" class=\"form-control\" required=\"required\" id=\"name\" name=\"name\" value=\" \">\n                                </div>\n                            </div>\n                            <div class=\"col\">\n                                <div class=\"form-group\">\n                                    <label for=\"email\">Email:</label>\n                                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" required=\"required\" aria-describedby=\"emailHelp\" value=\"\">\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"joke\">Piada</label>\n                            <textarea type=\"text\" class=\"form-control \" id=\"joke\" name=\"joke\" required=\"required\"></textarea>\n                        </div>\n                        <button type=\"submit\" class=\"btn btn-danger float-right\">Enviar piada</button>\n                        <a href=\"http://localhost/jokes\" type=\"submit\" class=\"btn btn-light float-right\">Cancelar</a>\n                    </form>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n        </main>\n    </div>\n    <script src=\"http://localhost/js/jquery.min.js\"></script>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+    /jokes/store:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: omnis
+                                email:
+                                    type: string
+                                    description: ''
+                                    example: consequatur
+                                joke:
+                                    type: string
+                                    description: ''
+                                    example: alias
+                            required:
+                                - name
+                                - email
+                                - joke
+            security: []
+    '/jokes/show/{joke}':
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                404:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'No query results for model [App\Models\Joke] {joke}'
+                                    exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                                    file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
+                                    line: 383
+                                    trace: [{ file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php, line: 332, function: prepareException, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: /usr/share/nginx/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php, line: 54, function: render, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php, line: 51, function: render, class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 172, function: handleException, class: Illuminate\Routing\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php, line: 78, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\VerifyCsrfToken, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php, line: 49, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\View\Middleware\ShareErrorsFromSession, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php, line: 121, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php, line: 64, function: handleStatefulRequest, class: Illuminate\Session\Middleware\StartSession, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Session\Middleware\StartSession, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php, line: 37, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php, line: 67, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Cookie\Middleware\EncryptCookies, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 697, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 672, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 636, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 625, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php, line: 31, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php, line: 40, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TrimStrings, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 86, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /usr/share/nginx/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 38, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /usr/share/nginx/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 651, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Command/Command.php, line: 299, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Application.php, line: 978, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Application.php, line: 295, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Application.php, line: 167, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /usr/share/nginx/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'No query results for model [App\Models\Joke] {joke}' }
+                                    exception: { type: string, example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException }
+                                    file: { type: string, example: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php }
+                                    line: { type: integer, example: 383 }
+                                    trace: { type: array, example: [{ file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php, line: 332, function: prepareException, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: /usr/share/nginx/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php, line: 54, function: render, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php, line: 51, function: render, class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 172, function: handleException, class: Illuminate\Routing\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php, line: 78, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\VerifyCsrfToken, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php, line: 49, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\View\Middleware\ShareErrorsFromSession, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php, line: 121, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php, line: 64, function: handleStatefulRequest, class: Illuminate\Session\Middleware\StartSession, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Session\Middleware\StartSession, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php, line: 37, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php, line: 67, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Cookie\Middleware\EncryptCookies, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 697, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 672, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 636, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Routing/Router.php, line: 625, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php, line: 31, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php, line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php, line: 40, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TrimStrings, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php, line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php, line: 86, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->' }, { file: /usr/share/nginx/vendor/fruitcake/laravel-cors/src/HandleCors.php, line: 38, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->' }, { file: /usr/share/nginx/vendor/fideloper/proxy/src/TrustProxies.php, line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php, line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php, line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 322, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 304, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 229, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 167, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 125, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /usr/share/nginx/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Container/Container.php, line: 651, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Command/Command.php, line: 299, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Application.php, line: 978, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Application.php, line: 295, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /usr/share/nginx/vendor/symfony/console/Application.php, line: 167, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /usr/share/nginx/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php, line: 129, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /usr/share/nginx/artisan, line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+    '/jokes/like/{joke}':
+        post:
+            summary: 'like the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/jokes/deslike/{joke}':
+        post:
+            summary: 'Deslike the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
